@@ -4,7 +4,7 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="thesharp-shortened"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,37 +49,39 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 if [[ `uname` == "Darwin" ]] ; then
-	alias ls="ls -G"
-	alias top="top -s1 -o cpu -R -F"
-	alias tor-ssh='ssh -o ProxyCommand="nc -X 4 -x localhost:9150 %h %p"'
-	alias osxlock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-	alias git="hub"
+        alias ls="ls -G"
+        alias top="top -s1 -o cpu -R -F"
+        alias tor-ssh='ssh -o ProxyCommand="nc -X 4 -x localhost:9150 %h %p"'
+        alias osxlock="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+        alias git="hub"
 
-	export PATH=/usr/local/sbin:/usr/local/bin:$HOME/dotfiles/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
-	export PYENV_ROOT="$HOME/.pyenv"
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	export GOPATH=$HOME/Dropbox/Projects/go
-	export PATH=$PATH:$GOPATH/bin
+        export PATH=/usr/local/sbin:/usr/local/bin:$HOME/dotfiles/bin:/usr/local/share/npm/bin:$HOME/.rvm/bin:$PATH
+        export PYENV_ROOT="$HOME/.pyenv"
+        export PATH="$PYENV_ROOT/bin:$PATH"
+        export GOPATH=$HOME/Dropbox/Projects/go
+        export PATH=$PATH:$GOPATH/bin
 
-	# homebrew
-	if [ -d /usr/local/share/zsh-completions ] ; then
-		fpath=(/usr/local/share/zsh-completions $fpath)
-	fi
+        # homebrew
+        if [ -d /usr/local/share/zsh-completions ] ; then
+                fpath=(/usr/local/share/zsh-completions $fpath)
+        fi
 
-	# pyenv (https://github.com/yyuu/pyenv) stuff
-	if which pyenv > /dev/null; then eval "$(pyenv init -)" ; pyenv virtualenvwrapper ; fi
+        # pyenv (https://github.com/yyuu/pyenv) stuff
+        if which pyenv > /dev/null; then eval "$(pyenv init -)" ; pyenv virtualenvwrapper ; fi
 
-	# fzf / ag
-	export FZF_DEFAULT_COMMAND='ag -g ""'
+        # fzf / ag
+        export FZF_DEFAULT_COMMAND='ag -g ""'
 fi
 
 alias scp="noglob scp"
+alias yum="noglob yum"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 export EDITOR=vim
 export PAGER=less
 export HISTCONTROL=ignoredups
+export TERM=xterm-256color
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -89,3 +91,5 @@ export LC_ALL=en_US.UTF-8
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git brew django fabric Forklift github pip pyenv python sudo virtualenvwrapper)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
