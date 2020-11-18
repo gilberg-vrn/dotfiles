@@ -114,6 +114,7 @@ export EDITOR=vim
 export PAGER=less
 export HISTCONTROL=ignoredups
 export TERM=screen-256color
+export PHPSTORM_JDK=/usr/java/jdk1.8.0_131/
 
 ### OSX-specific stuff
 if [ `uname` == "Darwin" ] ; then
@@ -167,3 +168,5 @@ fi
 ### autostart
 #fixagent
 # screen_reattach
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

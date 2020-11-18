@@ -121,15 +121,15 @@ bureau_precmd () {
   # _1SPACES=`get_space $_1LEFT $_1RIGHT`
   # print
   # print -rP "$_1LEFT$_1SPACES$_1RIGHT"
-  print -rP "%(?..%{$fg[red]%})➤%{$reset_color%} $_1LEFT"
+#  print -rP "%(?..%{$fg[red]%})➤%{$reset_color%} $_1LEFT"
 }
 
 setopt prompt_subst
 PROMPT="$_LIBERTY "
-# RPROMPT='$(nvm_prompt_info) $(bureau_git_prompt)'
+RPROMPT='$(nvm_prompt_info) $(bureau_git_prompt)'
 
 autoload -U add-zsh-hook
-add-zsh-hook precmd bureau_precmd
+#add-zsh-hook precmd bureau_precmd
 
 function _clear_screen() {
   # enable output to terminal

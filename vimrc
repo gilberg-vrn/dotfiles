@@ -19,7 +19,7 @@ Plug 'squarefrog/tomorrow-night.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-python/python-syntax'
 Plug 'rodjek/vim-puppet'
-Plug '/usr/local/opt/fzf'
+Plug '/home/emelyanov/.fzf/'
 Plug 'junegunn/fzf.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'mattn/webapi-vim'
@@ -37,7 +37,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'Shougo/deoplete.nvim'
+" Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go', {'do': 'make'}
 Plug 'mileszs/ack.vim'
 Plug 'bracki/vim-prometheus'
@@ -51,7 +51,10 @@ Plug 'bracki/vim-prometheus'
 " Plug 'chase/vim-ansible-yaml'
 " Plug 'rust-lang/rust.vim'
 " Plug 'fmoralesc/vim-pad'
-" Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'violetyk/neocomplete-php'
 " Plug 'Shougo/echodoc.vim'
 " Plug 'garbas/vim-snipmate', {'depends': ['MarcWeber/vim-addon-mw-utils', 'tomtom/tlib_vim']}
 
@@ -111,11 +114,14 @@ nmap <silent> <Leader>F :NERDTreeFind<CR>
 "" ack / ag
 nmap <leader>a :Ack!<Space>
 
+"" clear highlighted search
+noremap <silent> <Leader>s :let @/=""<CR>
+
 """ Remap arrows to quickfix-navigation
-nnoremap <silent> <Up> :cprevious<CR>
-nnoremap <silent> <Down> :cnext<CR>
-nnoremap <silent> <Left> :cpfile<CR>
-nnoremap <silent> <Right> :cnfile<CR>
+" nnoremap <silent> <Up> :cprevious<CR>
+" nnoremap <silent> <Down> :cnext<CR>
+" nnoremap <silent> <Left> :cpfile<CR>
+" nnoremap <silent> <Right> :cnfile<CR>
 
 """ Jump between splits with C-hjkl
 nnoremap <C-h> <C-w>h
@@ -318,10 +324,12 @@ let g:python3_host_prog  = '/usr/local/bin/python3'
 let g:python3_host_skip_check = 1
 
 " Run deoplete.nvim automatically
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
+
+let g:neocomplete#enable_at_startup = 1
 
 """ fzf
-set rtp+=/usr/local/opt/fzf
+set rtp+=$HOME/.fzf/bin/fzf
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
