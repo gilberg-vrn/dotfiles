@@ -89,4 +89,4 @@ export LC_ALL=en_US.UTF-8
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew django fabric Forklift github pip pyenv python sudo virtualenvwrapper)
+plugins=(git sudo)
